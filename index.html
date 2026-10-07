@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>KrishiMitra AI | Smart Farming Assistant</title>
+
+    <!-- CONNECTING CSS -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+    <!-- HEADER -->
+
+    <header>
+
+        <div class="logo-area">
+
+            <div class="logo">🌾</div>
+
+            <div class="brand">
+
+                <h1>KrishiMitra AI</h1>
+
+                <p id="headerSubtitle">
+                    Smart Farming Assistant
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="language-box">
+
+            <span>🌐</span>
+
+            <select id="language" onchange="changeLanguage()">
+
+                <option value="en">English</option>
+
+                <option value="hi">हिन्दी</option>
+
+                <option value="mr">मराठी</option>
+
+            </select>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- MAIN -->
+
+    <main>
+
+
+        <!-- WELCOME -->
+
+        <section class="welcome">
+
+            <h2 id="welcomeTitle">
+                Welcome to KrishiMitra 🌱
+            </h2>
+
+            <p id="welcomeText">
+
+                A smart farming assistant designed to help
+                farmers make informed decisions about
+                irrigation, soil and nutrient management.
+
+            </p>
+
+        </section>
+
+
+
+        <!-- DASHBOARD -->
+
+        <section class="dashboard">
+
+
+            <!-- FARM INFORMATION -->
+
+            <div class="card">
+
+                <h3 id="farmTitle">
+                    🌱 Farm Information
+                </h3>
+
+
+                <!-- CROP -->
+
+                <div class="form-group">
+
+                    <label id="cropLabel">
+                        Crop
+                    </label>
+
+                    <select id="crop">
+
+                        <option value="tomato">Tomato</option>
+
+                        <option value="wheat">Wheat</option>
+
+                        <option value="rice">Rice</option>
+
+                        <option value="maize">Maize</option>
+
+                        <option value="sugarcane">Sugarcane</option>
+
+                        <option value="soybean">Soybean</option>
+
+                        <option value="groundnut">Groundnut</option>
+
+                        <option value="cotton">Cotton</option>
+
+                        <option value="onion">Onion</option>
+
+                        <option value="chilli">Chilli</option>
+
+                    </select>
+
+                </div>
+
+
+
+                <!-- SOIL -->
+
+                <div class="form-group">
+
+                    <label id="soilLabel">
+                        Soil Type
+                    </label>
+
+                    <select id="soil">
+
+                        <option>Loamy</option>
+
+                        <option>Clay</option>
+
+                        <option>Sandy</option>
+
+                        <option>Unknown</option>
+
+                    </select>
+
+                </div>
+
+
+
+                <!-- MOISTURE -->
+
+                <div class="form-group">
+
+                    <label id="moistureLabel">
+                        Soil Moisture
+                    </label>
+
+                    <select id="moisture">
+
+                        <option>Low</option>
+
+                        <option>Medium</option>
+
+                        <option>High</option>
+
+                        <option>Unknown</option>
+
+                    </select>
+
+                </div>
+
+
+
+                <!-- RAIN -->
+
+                <div class="form-group">
+
+                    <label id="rainLabel">
+                        Rain Expected
+                    </label>
+
+                    <select id="rain">
+
+                        <option>No</option>
+
+                        <option>Yes</option>
+
+                        <option>Unknown</option>
+
+                    </select>
+
+                </div>
+
+
+
+                <!-- GROWTH STAGE -->
+
+                <div class="form-group">
+
+                    <label id="stageLabel">
+                        Growth Stage
+                    </label>
+
+                    <select id="stage">
+
+                        <option>Early growth</option>
+
+                        <option>Vegetative</option>
+
+                        <option>Flowering</option>
+
+                        <option>Fruiting</option>
+
+                        <option>Harvest</option>
+
+                        <option>Unknown</option>
+
+                    </select>
+
+                </div>
+
+
+
+                <!-- BUTTON -->
+
+                <button
+                    class="advice-button"
+                    onclick="getAdvice()"
+                    id="adviceButton">
+
+                    Get Farming Advice
+
+                </button>
+
+            </div>
+
+
+
+            <!-- RECOMMENDATIONS -->
+
+            <div class="card">
+
+                <h3 id="recommendationTitle">
+                    🤖 KrishiMitra Recommendations
+                </h3>
+
+
+                <div class="recommendation">
+
+                    <strong id="wateringTitle">
+                        💧 Watering
+                    </strong>
+
+                    <p id="wateringAdvice">
+
+                        Enter your farm information
+                        and request advice.
+
+                    </p>
+
+                </div>
+
+
+
+                <div class="recommendation">
+
+                    <strong id="fertiliserTitle">
+                        🌱 Fertiliser
+                    </strong>
+
+                    <p id="fertiliserAdvice">
+
+                        Soil-test-based and crop-specific
+                        guidance will appear here.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ORGANIC FARMING -->
+
+        <section class="card organic">
+
+            <h3 id="organicTitle">
+                🌿 Organic Nutrient Options
+            </h3>
+
+            <p id="organicDescription">
+
+                KrishiMitra can also provide information
+                about organic nutrient sources.
+
+            </p>
+
+
+            <div class="organic-grid">
+
+
+                <div class="organic-item">
+
+                    <div class="icon">🍂</div>
+
+                    <h4 id="compostTitle">
+                        Compost
+                    </h4>
+
+                    <p id="compostText">
+
+                        Mature compost made from suitable
+                        biodegradable plant materials.
+
+                    </p>
+
+                </div>
+
+
+
+                <div class="organic-item">
+
+                    <div class="icon">🪱</div>
+
+                    <h4 id="vermiTitle">
+                        Vermicompost
+                    </h4>
+
+                    <p id="vermiText">
+
+                        Compost produced using suitable
+                        biodegradable materials and earthworms.
+
+                    </p>
+
+                </div>
+
+
+
+                <div class="organic-item">
+
+                    <div class="icon">🌿</div>
+
+                    <h4 id="greenTitle">
+                        Plant Residues
+                    </h4>
+
+                    <p id="greenText">
+
+                        Appropriate crop residues and organic
+                        materials can contribute to soil health.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="safety">
+
+                <strong id="safetyTitle">
+                    ⚠️ Important
+                </strong>
+
+                <p id="safetyText">
+
+                    Fertiliser requirements vary by crop,
+                    soil and growth stage. Exact nutrient
+                    recommendations should be based on
+                    reliable agricultural guidance and,
+                    where available, soil-test results.
+
+                </p>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div>🌾 KrishiMitra AI</div>
+
+        <div class="creator">
+            Made by Adwit Gupta
+        </div>
+
+        <div>
+            Smart technology for better-informed farming.
+        </div>
+
+    </footer>
+
+
+
+    <!-- CONNECTING JAVASCRIPT -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
